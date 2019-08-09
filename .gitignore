@@ -96,3 +96,6 @@ ENV/
 
 # Personal test dir
 /t/*
+
+# Make sure not to accidentally check in any secrets
+local.settings.json

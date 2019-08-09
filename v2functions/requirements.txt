@@ -9,3 +9,8 @@ six==1.11.0
 requests==2.20.1
 feedparser==5.2.1
 Pillow==6.0.0
+# Required for Azure Media Services
+adal
+msrest
+azure-mgmt-media
+azure-storage-blob
