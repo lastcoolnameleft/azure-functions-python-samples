@@ -7,11 +7,7 @@ from msrestazure.azure_cloud import AZURE_PUBLIC_CLOUD
 from azure.mgmt.media import *
 from azure.mgmt.media.models import *
 
-def get_ams_client():
-    client_id = os.environ['MEDIA_SERVICES_CLIENT_ID']
-    client_key = os.environ['MEDIA_SERVICES_CLIENT_KEY']
-    subscription_id = os.environ['MEDIA_SERVICES_SUBSCRIPTION_ID']
-    tenant_id = os.environ['MEDIA_SERVICES_TENANT_ID']
+def get_ams_client(client_id, client_key, subscription_id, tenant_id):
 
     login_endpoint = AZURE_PUBLIC_CLOUD.endpoints.active_directory
     resource = AZURE_PUBLIC_CLOUD.endpoints.active_directory_resource_id

@@ -18,7 +18,12 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     account_name = os.environ['MEDIA_SERVICES_ACCOUNT_NAME']
 
     asset_name = get_and_validate_params(req)
-    client = AMSClient.get_ams_client()
+    client = AMSClient.get_ams_client(
+        os.environ['MEDIA_SERVICES_CLIENT_ID'],
+        os.environ['MEDIA_SERVICES_CLIENT_KEY'],
+        os.environ['MEDIA_SERVICES_SUBSCRIPTION_ID'],
+        os.environ['MEDIA_SERVICES_TENANT_ID']
+    )
 
     # Create a new input Asset and upload the specified local video file into it.
     asset_id, container_name = create_input_asset(client, resource_group, account_name, asset_name)

@@ -1,5 +1,5 @@
 {
-  "scriptFile": "__init__.py",
+  "scriptFile": "create-empty-asset.py",
   "bindings": [
     {
       "authLevel": "function",
