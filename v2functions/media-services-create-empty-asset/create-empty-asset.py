@@ -5,9 +5,8 @@ from os import makedirs, path, environ
 import datetime
 import azure.functions as func
 from urllib import parse
-from __app__.MediaServicesSharedCode import AMSClient
-from azure.mgmt.media import *
-from azure.mgmt.media.models import *
+from __app__.MediaServicesSharedCode import AMSClient # pylint: disable=import-error
+from azure.mgmt.media.models import Asset, AssetContainerPermission
 
 from azure.storage.blob import BlockBlobService
 
