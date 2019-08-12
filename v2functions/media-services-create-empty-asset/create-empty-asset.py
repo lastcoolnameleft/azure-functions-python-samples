@@ -59,6 +59,9 @@ def create_input_asset(client, resource_group_name, account_name, asset_name):
     asset_id = asset.asset_id
     logging.info("asset_id=" + str(asset_id))
 
+    # The container for the asset *should* be asset-$job; however, we don't want to trust it for now.
+    # This will get a SAS URL to parse, just in case
+
     # Use Media Services API to get back a response that contains
     # SAS URL for the Asset container into which to upload blobs.
     # That is where you would specify read-write permissions 
