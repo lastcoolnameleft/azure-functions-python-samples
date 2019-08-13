@@ -14,7 +14,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python Blob Trigger function processed: media-services-create-empty-asset')
 
     resource_group = os.environ['MEDIA_SERVICES_RESOURCE_GROUP']
-    account_name = os.environ['MEDIA_SERVICES_ACCOUNT_NAME']
+    storage_account_name = os.environ['STORAGE_ACCOUNT_NAME']
 
     asset_name = get_and_validate_params(req)
     client = AMSClient.get_ams_client(
@@ -25,7 +25,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     )
 
     # Create a new input Asset and upload the specified local video file into it.
-    asset_id, container_name = create_input_asset(client, resource_group, account_name, asset_name)
+    asset_id, container_name = create_input_asset(client, resource_group, storage_account_name, asset_name)
 
     return func.HttpResponse(
         json.dumps({
